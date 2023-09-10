@@ -1,0 +1,73 @@
+---
+interface Props {
+	title: string;
+}
+import { ViewTransitions } from 'astro:transitions';
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<ViewTransitions/>
+	</head>
+	<body >
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		--accent: 136, 58, 234;
+		--accent-light: 224, 204, 250;
+		--accent-dark: 49, 10, 101;
+		--accent-gradient: linear-gradient(
+			45deg,
+			rgb(var(--accent)),
+			rgb(var(--accent-light)) 30%,
+			white 60%
+		);
+	}
+	li{
+		@apply px-1 text-left md:px-4 md:py-2; ;
+	}
+	.inputNumber{
+    @apply px-4 py-2 valid:border-green-500 focus:border-blue-500 hover:border-blue-500 hover:border-opacity-75 ;
+  }
+	input{
+    @apply bg-transparent border-4 rounded-3xl  border-gray-300 focus:outline-none focus:border-blue-500
+  }
+	.base-page{
+		@apply grid place-content-center h-screen  py-2;
+	}
+	.base-form{
+		@apply grid mr-2 place-content-center p-4 gap-4 md:border-4 md:shadow-white rounded-3xl md:w-96 md:shadow-md;
+	}
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+  margin: 0;
+}
+	html {
+		font-family: system-ui, sans-serif;
+		background:#202020;
+		background-size: 224px;
+		@apply text-white
+	}
+	code {
+		font-family:
+			Menlo,
+			Monaco,
+			Lucida Console,
+			Liberation Mono,
+			DejaVu Sans Mono,
+			Bitstream Vera Sans Mono,
+			Courier New,
+			monospace;
+	}
+</style>

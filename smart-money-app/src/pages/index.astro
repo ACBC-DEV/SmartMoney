@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CardHome from '../components/CardHome.astro';
+
+import {calculadorasFinancieras as dtc} from '../data/calcData'
+---
+
+<Layout title="Welcome to Astro.">
+	<main class="md:h-screen place-content-center">
+		 <h1 class="text-5xl font-extrabold my-20 text-center md:text-7xl">SmartMoney</h1>
+	<section class="sm:mb-3 grid place-content-center px-4 md:grid-cols-2 lg:grid-cols-3 md:px-8 lg:px-16 xl:grid-cols-4">
+		{dtc.map((item) => (
+			<CardHome 
+				key={item.id}
+				title={item.title}
+				descripcion={item.descripcion}
+				type={item.tipo}
+				link={item.link}
+			/>
+		))}
+	</section>
+	</main>
+</Layout>
+
+

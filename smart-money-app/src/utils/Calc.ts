@@ -1,6 +1,12 @@
+// export function formatNumberWithCommas(number: number): string {
+//   const num = number.toFixed(2);
+//   return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+// }
 export function formatNumberWithCommas(number: number): string {
-  const num = number.toFixed(2);
-  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return new Intl.NumberFormat("en-US", {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 2,
+  }).format(number);
 }
 export interface AmortizationScheduleItem {
   month: number;

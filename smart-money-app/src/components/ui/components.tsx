@@ -47,3 +47,19 @@ export function BackButton({ Text }: { Text?: string }) {
     </a>
   );
 }
+
+export function AgainButton() {
+  const refreshPage = (e: Event) => {
+    e.preventDefault();
+    window.location.reload;
+  };
+
+  return (
+    <div
+      class="md:border-4 rounded-3xl cursor-pointer px-4 py-2 w-fit text-center mb-2"
+      onClick={refreshPage}
+    >
+      <img src="../../../public/rotate-clockwise.svg" alt="" />
+    </div>
+  );
+}

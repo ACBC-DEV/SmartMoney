@@ -1,5 +1,5 @@
 import { Show, createSignal } from "solid-js";
-import { BackButton } from "./ui/components";
+import { BackButton, ButtonSubmit } from "./ui/components";
 import { formatNumberWithCommas } from "../utils/Calc";
 function validar(taxt: "IVA" | "4x1000") {
   if (taxt === "IVA") {
@@ -41,13 +41,7 @@ function FormTaxas({ taxt }: { taxt: "IVA" | "4x1000" }) {
           onInput={(e) => setValor(parseFloat(e.target.value))}
         />
 
-        <button
-          class="border-4 rounded-3xl w-fit mx-auto px-4 py-2 focus:outline-none focus:border-blue-500"
-          type="submit"
-        >
-          Calcular
-        </button>
-
+        <ButtonSubmit />
         <Show when={result() !== null}>
           <div class="border-4 p-4 rounded-3xl">
             <h2 class="text-xl font-semibold">

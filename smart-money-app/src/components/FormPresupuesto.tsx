@@ -1,5 +1,5 @@
 import { Show, createSignal } from "solid-js";
-import { BackButton } from "./ui/components";
+import { BackButton, ButtonSubmit } from "./ui/components";
 import { formatNumberWithCommas } from "../utils/Calc";
 
 function FormPres() {
@@ -84,13 +84,7 @@ function FormPres() {
           onInput={(e) => setValor(parseFloat(e.target.value))}
         />
 
-        <button
-          class="border-4 rounded-3xl w-fit mx-auto px-4 py-2 focus:outline-none focus:border-blue-500"
-          type="submit"
-        >
-          Calcular
-        </button>
-
+        <ButtonSubmit />
         <Show when={porcentajes() !== null}>
           <div class="border-4 p-4 rounded-3xl">
             <h2 class="text-xl font-semibold">Presupuesto Recomendado</h2>

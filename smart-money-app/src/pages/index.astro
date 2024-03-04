@@ -5,13 +5,13 @@ import CardHome from "../components/CardHome.astro";
 import { calculadorasFinancieras as dtc } from "../data/calcData";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="SmartMoney">
   <main class="md:h-screen place-content-center">
     <h1 class="text-5xl font-extrabold my-20 text-center md:text-7xl">
       SmartMoney
     </h1>
     <section
-      class="sm:mb-3 grid place-content-center px-4 md:grid-cols-2 lg:grid-cols-3 md:px-8 lg:px-16"
+      class="sm:mb-3 grid place-content-center animate-blink animate-duration-400 animate-delay-300 px-4 md:grid-cols-2 lg:grid-cols-3 md:px-8 lg:px-16"
     >
       {
         dtc.map((item) => (

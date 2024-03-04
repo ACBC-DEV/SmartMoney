@@ -1,6 +1,7 @@
 import { Show, createSignal } from "solid-js";
 import { BackButton } from "./ui/components";
 import { formatNumberWithCommas } from "../utils/Calc";
+import { ButtonSubmit } from "./ui/components";
 
 function CalculadoraAhorros() {
   const [montoInicial, setMontoInicial] = createSignal<number | null>(null);
@@ -91,14 +92,7 @@ function CalculadoraAhorros() {
           value={plazoEnAnos() === null ? "" : plazoEnAnos()!}
           onInput={(e) => setPlazoEnAnos(parseInt(e.target.value, 10))}
         />
-
-        <button
-          class="border-4 rounded-3xl w-fit mx-auto  px-4 py-2  focus:outline-none focus:border-blue-500"
-          type="submit"
-        >
-          Calcular
-        </button>
-
+        <ButtonSubmit />
         <Show when={valorFuturo() !== null}>
           <div class="border-4 p-4 rounded-3xl">
             <p>

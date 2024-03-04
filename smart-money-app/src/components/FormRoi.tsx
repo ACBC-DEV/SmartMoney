@@ -1,5 +1,5 @@
 import { Show, createSignal } from "solid-js";
-import { BackButton } from "./ui/components";
+import { BackButton, ButtonSubmit } from "./ui/components";
 function calcularROI(beneficioNeto: number, inversionInicial: number): string {
   const roi = (beneficioNeto / inversionInicial - 1) * 100;
   return roi.toFixed(2);
@@ -42,12 +42,7 @@ function ROIForm() {
           value={profit() === null ? "" : profit()!}
           onChange={(e) => setProfit(parseFloat(e.target.value))}
         />
-        <button
-          class="border-4 rounded-3xl w-fit mx-auto px-4 py-2 focus:outline-none focus:border-blue-500"
-          type="submit"
-        >
-          Calcular
-        </button>
+        <ButtonSubmit />
         <Show when={resultadoROI() !== null}>
           <div class="border-4 p-4 rounded-3xl">
             <p>Roi : {resultadoROI()?.toFixed(2)}%</p>

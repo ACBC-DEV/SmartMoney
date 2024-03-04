@@ -1,5 +1,5 @@
 import { Show, createSignal } from "solid-js";
-import { BackButton } from "./ui/components";
+import { BackButton, ButtonSubmit } from "./ui/components";
 import { formatNumberWithCommas } from "../utils/Calc";
 export default function InvestmentCalculator() {
   const [initialInvestment, setInitialInvestment] = createSignal<number | null>(
@@ -25,7 +25,7 @@ export default function InvestmentCalculator() {
   return (
     <div class="grid mx-2 p-4 place-content-center">
       <form
-        class="grid mr-2 place-content-center p-4  gap-4  md:border-4 md:shadow-white  rounded-3xl md:w-96 md:shadow-md appearance-none"
+        class="grid mr-2 place-content-center p-4  gap-4  md:border-4 md:shadow-white  rounded-3xl  md:shadow-md appearance-none"
         onSubmit={calcularInversion}
       >
         <BackButton />
@@ -70,12 +70,7 @@ export default function InvestmentCalculator() {
           onInput={(e) => setYears(parseInt(e.target.value, 10))}
         />
 
-        <button
-          class="border-4 rounded-3xl w-fit mx-auto  px-4 py-2  focus:outline-none focus:border-blue-500"
-          type="submit"
-        >
-          Calcular
-        </button>
+        <ButtonSubmit />
         <Show when={investmentValue() !== null}>
           <div class="border-4 p-4 rounded-3xl">
             <p>

@@ -1,5 +1,5 @@
 import { Show, createSignal } from "solid-js";
-import { BackButton } from "./ui/components";
+import { BackButton, ButtonSubmit } from "./ui/components";
 import ArtzTable from "../components/ui/ArtzTable";
 import {
   formatNumberWithCommas,
@@ -91,12 +91,7 @@ function AmortizationCalculator() {
               onInput={(e) => setTerm(+e.target.value)}
               required
             />
-            <button
-              class="border-4 rounded-3xl w-fit mx-auto  px-4 py-2 hover:border-blue-500 focus:outline-none focus:border-blue-500 "
-              type="submit"
-            >
-              Calcular
-            </button>
+            <ButtonSubmit />
           </form>
         </div>
       </Show>

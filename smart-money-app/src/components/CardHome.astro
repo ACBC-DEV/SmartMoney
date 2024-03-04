@@ -1,38 +1,39 @@
-
+---
+const { title, descripcion, type, link } = Astro.props;
 ---
 
-
-const {title , descripcion,type ,link} = Astro.props
----
 <a href={`/${link}`}>
   <div
-   class:list={
-    ["cursor-pointer shadow-sm shadow-white grid place-content-start  gap-y-2 p-4 border-4 rounded-3xl mt-4 mr-2 hover:bg-zinc-800 hover:shadow-transparent  md:h-72 xl:mx-4",
-    {
-      'hover:border-sky-500': type == 'Préstamos',
-        'hover:border-red-500': type == 'Inversiones',
-        'hover:border-blue-500': type == 'Empresarial',
-        'hover:border-emerald-500': type == 'Impuestos (Colombia)',
-        'hover:border-amber-500': type == 'Ahorros',
-        'hover:border-orange-500': type == 'Presupuesto',
-
-    }
-  ]
-    
-   } class=>
-    <h1 class="text-3xl  font-semibold px-2 md:text-4xl">{title}</h1>
-    <p class:list={
-      ['py-2 px-4 border-2 w-fit rounded-3xl text-xl',
+    class:list={[
+      "cursor-pointer shadow-sm shadow-white grid place-content-start h-fit z-10  duration-100 hover:duration-300 hover:scale-110 gap-y-2 p-4 border-4 rounded-3xl mt-4 mr-2 hover:bg-zinc-800 hover:shadow-transparent  md:h-72 xl:mx-4",
       {
-        'border-sky-500': type == 'Préstamos',
-        'border-red-500': type == 'Inversiones',
-        'border-blue-500': type == 'Empresarial',
-        'border-emerald-500': type == 'Impuestos (Colombia)',
-        'border-amber-500': type == 'Ahorros',
-        'border-orange-500': type == 'Presupuesto',
-
-      }]
-    }>{type}</p>
-    <p class="text-zinc-200 mb-2   p-2 md:text-xl">{descripcion}</p>
-</a>
-<s></s>
+        "hover:border-sky-500": type == "Préstamos",
+        "hover:border-red-500": type == "Inversiones",
+        "hover:border-blue-500": type == "Empresarial",
+        "hover:border-emerald-500": type == "Impuestos (Colombia)",
+        "hover:border-amber-500": type == "Ahorros",
+        "hover:border-orange-500": type == "Presupuesto",
+      },
+    ]}
+    class=""
+  >
+    <h1 class="text-3xl font-semibold px-2 md:text-4xl">{title}</h1>
+    <p
+      class:list={[
+        "py-2 px-4 border-2 w-fit rounded-3xl text-xl duration-200 hover:scale-105",
+        {
+          "border-sky-500": type == "Préstamos",
+          "border-red-500": type == "Inversiones",
+          "border-blue-500": type == "Empresarial",
+          "border-emerald-500": type == "Impuestos (Colombia)",
+          "border-amber-500": type == "Ahorros",
+          "border-orange-500": type == "Presupuesto",
+        },
+      ]}
+    >
+      {type}
+    </p>
+    <p class="text-zinc-200 mb-2 p-2 md:text-xl">{descripcion}</p>
+  </div>
+  <s></s></a
+>

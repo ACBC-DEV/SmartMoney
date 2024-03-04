@@ -11,6 +11,9 @@ dependencies:
   '@astrojs/tailwind':
     specifier: ^5.0.0
     version: 5.0.2(astro@3.4.3)(tailwindcss@3.3.5)
+  '@midudev/tailwind-animations':
+    specifier: ^0.0.7
+    version: 0.0.7(tailwindcss@3.3.5)
   '@tanstack/solid-table':
     specifier: ^8.10.7
     version: 8.10.7(solid-js@1.8.5)
@@ -879,6 +882,14 @@ packages:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.1
       '@jridgewell/sourcemap-codec': 1.4.15
+    dev: false
+
+  /@midudev/tailwind-animations@0.0.7(tailwindcss@3.3.5):
+    resolution: {integrity: sha512-K897X4NvM3tV2/R7aCjl6gJ6msWSTqQtcAwb5VX5D5+m/Mo650mEFoeODwqzaePYNro5BTGyXXFQw/kiHBZlUA==}
+    peerDependencies:
+      tailwindcss: ^3.0.0
+    dependencies:
+      tailwindcss: 3.3.5
     dev: false
 
   /@nodelib/fs.scandir@2.1.5:

@@ -35,7 +35,7 @@ const { title } = Astro.props;
       @apply px-1 text-left md:px-4 md:py-2;
     }
     .inputNumber {
-      @apply px-4 py-2 valid:border-green-500 focus:border-blue-500 hover:border-blue-500 hover:border-opacity-75;
+      @apply px-4 py-2 valid:border-green-500 focus:border-blue-500 duration-200 hover:border-blue-500 hover:border-opacity-75 hover:valid:border-green-600;
     }
     input {
       @apply bg-transparent border-4 rounded-3xl  border-gray-300 focus:outline-none focus:border-blue-500;
@@ -67,6 +67,9 @@ const { title } = Astro.props;
         Bitstream Vera Sans Mono,
         Courier New,
         monospace;
+    }
+    .btn-s{
+      @apply md:border-4 rounded-3xl cursor-pointer px-4 py-2 w-fit text-center mb-2 hover:bg-white duration-300 border-white hover:text-[#333] hover:scale-105
     }
   </style>
 </html>

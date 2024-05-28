@@ -1,6 +1,6 @@
 import { Show, createSignal } from "solid-js";
 import { BackButton, ButtonSubmit } from "./ui/components";
-import { formatNumberWithCommas,calculateMonthlyPayment } from "../utils/Calc";
+import { formatNumberWithCommas, calculateMonthlyPayment } from "../utils/Calc";
 function LoanCalculator() {
 	const [loanAmount, setLoanAmount] = createSignal<number | null>(null);
 	const [interestRate, setInterestRate] = createSignal<number | null>(null);
@@ -17,9 +17,12 @@ function LoanCalculator() {
 			interestRate() !== null &&
 			loanTermInMonths() !== null
 		) {
-
-				const monthlyPayment=calculateMonthlyPayment(loanAmount()??0, interestRate()??0, loanTermInMonths()??0);
-				setResult(monthlyPayment);
+			const monthlyPayment = calculateMonthlyPayment(
+				loanAmount() ?? 0,
+				interestRate() ?? 0,
+				loanTermInMonths() ?? 0,
+			);
+			setResult(monthlyPayment);
 		}
 	}
 
@@ -86,7 +89,7 @@ function LoanCalculator() {
 						<p>
 							Total Pagado: $
 							{formatNumberWithCommas(
-								result() ?? 0 * (loanTermInMonths() ?? 0),
+								(result() ?? 0) * (loanTermInMonths() ?? 0),
 							)}
 						</p>
 						<p>

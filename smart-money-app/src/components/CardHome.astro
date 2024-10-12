@@ -15,9 +15,13 @@ const { title, descripcion, type, link } = Astro.props;
         "hover:border-orange-500": type == "Presupuesto",
       },
     ]}
-    class=""
   >
-    <h1 class="text-3xl font-semibold px-2 md:text-4xl">{title}</h1>
+    <h1
+      class="text-3xl font-semibold px-2 md:text-4xl"
+      transition:name={`${title}-title`}
+    >
+      {title}
+    </h1>
     <p
       class:list={[
         "py-2 px-4 border-2 w-fit rounded-3xl text-xl duration-200 hover:scale-110",
@@ -25,7 +29,8 @@ const { title, descripcion, type, link } = Astro.props;
           "border-sky-500 hover:bg-sky-500": type == "Préstamos",
           "border-red-500 hover:bg-red-500": type == "Inversiones",
           "border-blue-500 hover:bg-blue-500": type == "Empresarial",
-          "border-emerald-500 hover:bg-emerald-500": type == "Impuestos (Colombia)",
+          "border-emerald-500 hover:bg-emerald-500":
+            type == "Impuestos (Colombia)",
           "border-amber-500 hover:bg-amber-500": type == "Ahorros",
           "border-orange-500 hover:bg-orange-500": type == "Presupuesto",
         },

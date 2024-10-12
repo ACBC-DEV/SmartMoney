@@ -36,7 +36,7 @@ function AmortizationCalculator() {
 				fallback={
 					<div class="flex gap-x-2 justify-center mt-4">
 						<BackButton />
-						<AgainButton onClick={reset}/>
+						<AgainButton onClick={reset} />
 					</div>
 				}
 			>
@@ -47,18 +47,20 @@ function AmortizationCalculator() {
 					>
 						<BackButton />
 						<h2 class="text-3xl font-semibold ">Calculadora de Amortización</h2>
-						<label>Monto del Préstamo:</label>
+						<label for="principal">Monto del Préstamo:</label>
 						<input
+							id="principal"
 							class="inputNumber"
 							type="number"
 							placeholder="Monto del Préstamo"
-							value={principal() === null ? "" : principal() ?? 0}
+							value={principal() === null ? "" : (principal() ?? 0)}
 							onchange={(e) => setPrincipal(Number(e.target.value))}
 							required
 						/>
 
-						<label>Tasa de Interés Anual (%):</label>
+						<label for="interestRate">Tasa de Interés Anual (%):</label>
 						<input
+							id="interestRate"
 							class={`inputNumber  ${
 								interestRate() !== null
 									? "peer invalid:border-red-500 invalid:focus:border-red-500"
@@ -68,19 +70,20 @@ function AmortizationCalculator() {
 							min={1}
 							max={100}
 							type="number"
-							value={interestRate() === null ? "" : interestRate() ?? 0}
+							value={interestRate() === null ? "" : (interestRate() ?? 0)}
 							onInput={(e) => setInterestRate(+e.target.value)}
 							required
 						/>
 						<p class="text-red-500 px-1 hidden peer-invalid:block">
 							Valor Invalido (1-100)
 						</p>
-						<label>Plazo del préstamo en meses</label>
+						<label for="term">Plazo del préstamo en meses</label>
 						<input
+							id="term"
 							class="inputNumber"
 							type="number"
 							placeholder="Plazo del préstamo en meses"
-							value={term() === null ? "" : term() ?? 0}
+							value={term() === null ? "" : (term() ?? 0)}
 							onInput={(e) => setTerm(+e.target.value)}
 							required
 						/>
